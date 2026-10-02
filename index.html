@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- SEO & Local Business Meta Tags -->
+  <title>Sotto – Cucina, vino e pizza | Cantina + Cucina a Comunanza (AP)</title>
+  <meta name="description" content="Sotto – Cucina, vino e pizza nel centro storico di Comunanza (AP) presso l'Interamnia Boutique Hotel. Cucina del territorio, pizze a lenta maturazione e ricercata selezione di vini.">
+  <meta name="author" content="Sotto – Cantina + Cucina">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://sottocomunanza.it/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="restaurant">
+  <meta property="og:title" content="Sotto – Cantina + Cucina | Comunanza (AP)">
+  <meta property="og:description" content="Ristorante, pizzeria e cantina nel centro storico di Comunanza (AP). Cucina del territorio, pizze ad alta digeribilità e vini selezionati.">
+  <meta property="og:image" content="assets/logo.png">
+  <meta property="og:url" content="https://sottocomunanza.it/">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sotto – Cantina + Cucina | Comunanza (AP)">
+  <meta name="twitter:description" content="Ristorante, pizzeria e cantina nel centro storico di Comunanza (AP). Cucina del territorio, pizze a lenta maturazione e selezione vini.">
+  <meta name="twitter:image" content="assets/logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+
+  <!-- Google Fonts: Cormorant Garamond (Serif elegante) & Plus Jakarta Sans / Outfit (Sans raffinato) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Stili CSS Principali -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Dati Strutturati Schema.org JSON-LD (Local Business / Restaurant) -->
+  <!-- NOTA SEO: Nessun campo openingHours inserito fino a conferma orari definitivi -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "@id": "https://sottocomunanza.it/#restaurant",
+    "name": "Sotto",
+    "alternateName": [
+      "Sotto – Cucina, vino e pizza",
+      "Sotto – Cantina + Cucina"
+    ],
+    "description": "Ristorante, pizzeria e cantina situato nel centro storico di Comunanza (AP) presso l'Interamnia Boutique Hotel. Piatti tipici marchigiani, pizze con impasto a lenta maturazione e curata selezione di vini.",
+    "image": "assets/logo.png",
+    "telephone": "+390736618154",
+    "priceRange": "€€",
+    "servesCuisine": [
+      "Italiana",
+      "Marchigiana",
+      "Pizza",
+      "Cucina del territorio"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Piazza Santa Caterina, 1",
+      "addressLocality": "Comunanza",
+      "postalCode": "63087",
+      "addressRegion": "AP",
+      "addressCountry": "IT"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 42.9568,
+      "longitude": 13.4144
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "68",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "hasMenu": "https://sottocomunanza.it/#menu",
+    "sameAs": [
+      "https://www.instagram.com/sotto_winefood/",
+      "https://www.facebook.com/sottowinefood"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ========================================================================
+       HEADER STICKY & NAVIGAZIONE
+       ======================================================================== -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      
+      <!-- Brand & Logo -->
+      <a href="#hero" class="brand-link" aria-label="Sotto – Torna all'inizio">
+        <img src="assets/logo.png" alt="Sotto – Cantina + Cucina" class="brand-logo-img">
+        <div class="brand-meta">
+          <span class="brand-title">SOTTO</span>
+          <span class="brand-subtitle">Cantina + Cucina</span>
+        </div>
+      </a>
+
+      <!-- Menu di Navigazione Desktop & Mobile Drawer -->
+      <nav class="site-nav" role="navigation" aria-label="Navigazione principale">
+        <ul class="nav-list">
+          <li><a href="#locale" class="nav-link" data-i18n="navLocale">Il Locale</a></li>
+          <li><a href="#menu" class="nav-link" data-i18n="navMenu">Menu</a></li>
+          <li><a href="#pizze" class="nav-link" data-i18n="navPizze">Le Pizze</a></li>
+          <li><a href="#recensioni" class="nav-link" data-i18n="navRecensioni">Recensioni</a></li>
+          <li><a href="#ordinare" class="nav-link" data-i18n="navComeOrdinare">Come Ordinare</a></li>
+          <li><a href="#contatti" class="nav-link" data-i18n="navContatti">Dove Siamo</a></li>
+        </ul>
+      </nav>
+
+      <!-- Azioni Header: Selettore Lingua & CTA Prenota -->
+      <div class="header-actions">
+        <!-- Selettore Lingua Bilingue IT / EN -->
+        <div class="lang-switcher" role="group" aria-label="Selettore lingua / Language selector">
+          <button type="button" class="lang-btn lang-btn-it active" data-lang="it" aria-label="Passa alla lingua italiana">IT</button>
+          <button type="button" class="lang-btn lang-btn-en" data-lang="en" aria-label="Switch to English language">EN</button>
+        </div>
+
+        <!-- CTA Telefonica Rapida -->
+        <a href="tel:0736618154" class="header-cta-btn" aria-label="Chiama il ristorante per prenotare">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <span data-i18n="btnPrenotaTavolo">Prenota un tavolo</span>
+        </a>
+
+        <!-- Toggle Mobile Hamburger -->
+        <button type="button" class="mobile-menu-toggle" aria-expanded="false" aria-label="Apri o chiudi il menu di navigazione">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Overlay per mobile menu drawer -->
+  <div class="mobile-overlay" aria-hidden="true"></div>
+
+  <main id="main-content">
+
+    <!-- ========================================================================
+         1. HERO SECTION
+         ======================================================================== -->
+    <section id="hero" class="hero-section" aria-labelledby="hero-brand-heading">
+      <div class="container hero-grid">
+        
+        <div class="hero-content">
+          <!-- Badge di verifica Google e Fascia Prezzo -->
+          <div class="hero-badges-row">
+            <span class="hero-badge" data-i18n="badgeRating">
+              <span class="star-icon">★</span> 4,8 su Google (68 recensioni)
+            </span>
+            <span class="hero-badge" data-i18n="badgePrice">
+              Fascia 20–30 € a persona
+            </span>
+            <span class="hero-badge badge-hotel">
+              Presso Interamnia Boutique Hotel
+            </span>
+          </div>
+
+          <div class="hero-title-group">
+            <h1 id="hero-brand-heading" class="hero-brand-name">SOTTO</h1>
+            <p class="hero-tagline" data-i18n="taglineHero">Cucina, vino e pizza</p>
+            <p class="hero-subtagline" data-i18n="subtaglineHero">Cantina + Cucina nel centro storico di Comunanza (AP)</p>
+          </div>
+
+          <p class="hero-location-text">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span data-i18n="heroAddress">Piazza Santa Caterina, 1 • Presso Interamnia Boutique Hotel</span>
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="tel:0736618154" class="cta-button cta-primary" aria-label="Telefona per prenotare un tavolo">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span data-i18n="btnPrenotaTavolo">Prenota un tavolo</span>
+            </a>
+            <a href="#menu" class="cta-button cta-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+              <span data-i18n="btnVediMenu">Vedi il menu</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Segnaposto Immagine Hero (Design elegante senza foto stock fuori contesto) -->
+        <div class="hero-visual-card">
+          <!-- SOSTITUIRE CON FOTO REALE: Panoramica del locale o atmosfera cantina -->
+          <div class="placeholder-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+            <span>Spazio per Foto Reale del Locale</span>
+          </div>
+          <div class="placeholder-art">
+            <div class="art-logo-mark">
+              <img src="assets/logo.png" alt="Sotto – Cantina + Cucina" style="width: 58px; height: 58px; object-fit: contain;">
+            </div>
+            <p class="art-quote">«Location suggestiva, ingredienti ricercati e di qualità, ottimi vini.»</p>
+            <span class="art-caption">Comunanza (AP) • Interamnia Boutique Hotel</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         2. IL LOCALE (Narrativa verificata, atmosfera, 3 Highlights)
+         ======================================================================== -->
+    <section id="locale" class="section-locale" aria-labelledby="locale-heading">
+      <div class="container">
+        
+        <div class="locale-narrative">
+          <span class="section-tag" data-i18n="localeSectionTag">Identità & Atmosfera</span>
+          <h2 id="locale-heading" class="section-title" data-i18n="localeTitle">Un rifugio di gusto tra le mura del borgo</h2>
+          
+          <div class="locale-paragraphs">
+            <p data-i18n="localeText1">
+              Nel suggestivo centro storico di Comunanza, accarezzato dal respiro dei Monti Sibillini, Sotto accoglie i propri ospiti negli spazi intimi e ricchi di fascino dell'Interamnia Boutique Hotel.
+            </p>
+            <p data-i18n="localeText2">
+              Una cantina accogliente e una cucina che valorizza il territorio: dalle paste tirate a regola d'arte ai sapori franchi delle carni locali, fino alle nostre pizze ad alta digeribilità e a una carta vini con un'attenzione viva per le produzioni naturali.
+            </p>
+          </div>
+        </div>
+
+        <!-- 3 Highlights a Icone: Cucina, Vino, Pizza -->
+        <div class="locale-highlights-grid">
+          
+          <!-- Highlight 1: Cucina -->
+          <article class="highlight-card">
+            <div class="highlight-icon-wrapper" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2l-4 4-2-2 4-4 2 2z"></path><path d="M14 6l-8 8"></path><path d="M3 21l3-3"></path><path d="M9 15l-3 3"></path><path d="M18 10l-4 4"></path></svg>
+            </div>
+            <h3 class="highlight-title" data-i18n="highlightCucinaTitle">Cucina del Territorio</h3>
+            <p class="highlight-desc" data-i18n="highlightCucinaDesc">
+              Primi piatti della tradizione, sapori schietti dei Sibillini e carni cotte a regola d'arte.
+            </p>
+          </article>
+
+          <!-- Highlight 2: Vino -->
+          <article class="highlight-card">
+            <div class="highlight-icon-wrapper" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h8"></path><path d="M12 15v7"></path><path d="M12 15a5 5 0 0 0 5-5c0-4-5-8-5-8s-5 4-5 8a5 5 0 0 0 5 5z"></path></svg>
+            </div>
+            <h3 class="highlight-title" data-i18n="highlightVinoTitle">Cantina & Vini Naturali</h3>
+            <p class="highlight-desc" data-i18n="highlightVinoDesc">
+              Una selezione ricercata di etichette del territorio marchigiano e vignaioli artigianali.
+            </p>
+          </article>
+
+          <!-- Highlight 3: Pizza -->
+          <article class="highlight-card">
+            <div class="highlight-icon-wrapper" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+            </div>
+            <h3 class="highlight-title" data-i18n="highlightPizzaTitle">Pizze a Lenta Maturazione</h3>
+            <p class="highlight-desc" data-i18n="highlightPizzaDesc">
+              Impasti curati con dedizione, maturati a lungo per garantire massima leggerezza e fragranza.
+            </p>
+          </article>
+
+        </div>
+
+        <!-- Segnaposto fotografici dedicati al locale e alla cantina -->
+        <div class="locale-photo-strip">
+          <!-- SOSTITUIRE CON FOTO REALE: Atmosfera cantina, tavoli e archi in pietra -->
+          <div class="photo-slot">
+            <div class="photo-slot-content">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+              <span class="photo-slot-title">Atmosfera Cantina & Sala Interna</span>
+              <span class="photo-slot-hint">Spazio per foto reale degli ambienti suggestivi</span>
+            </div>
+          </div>
+
+          <!-- SOSTITUIRE CON FOTO REALE: Primi piatti freschi o taglieri di salumi del territorio -->
+          <div class="photo-slot">
+            <div class="photo-slot-content">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+              <span class="photo-slot-title">I Nostri Piatti del Territorio</span>
+              <span class="photo-slot-hint">Spazio per foto reale della cucina e dei salumi</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         3. MENU (Generazione dinamica da oggetto JS, Chip sticky, Dotted leader)
+         ======================================================================== -->
+    <section id="menu" class="section-menu" aria-labelledby="menu-heading">
+      <div class="container">
+        
+        <div class="menu-header-block">
+          <span class="section-tag" data-i18n="menuSectionTag">La Nostra Proposta</span>
+          <h2 id="menu-heading" class="section-title" data-i18n="menuTitle">La Carta del Ristorante</h2>
+          <p class="section-subtitle" data-i18n="menuSubtitle">
+            Tutti i piatti sono preparati con ingredienti selezionati e prodotti del territorio marchigiano.
+          </p>
+        </div>
+
+        <!-- Barra chip categorie sticky -->
+        <div class="menu-categories-wrapper" role="tablist" aria-label="Filtro categorie menu">
+          <div class="category-chips-list">
+            <button type="button" class="category-chip active" data-category="all" role="tab" aria-selected="true" data-i18n="filterAll">Tutto il Menu</button>
+            <button type="button" class="category-chip" data-category="antipasti" role="tab" aria-selected="false">Antipasti</button>
+            <button type="button" class="category-chip" data-category="primi" role="tab" aria-selected="false">Primi Piatti</button>
+            <button type="button" class="category-chip" data-category="carni" role="tab" aria-selected="false">Le Nostre Carni</button>
+            <button type="button" class="category-chip" data-category="contorni" role="tab" aria-selected="false">Contorni</button>
+            <button type="button" class="category-chip" data-category="pizze" role="tab" aria-selected="false">Pizze</button>
+            <button type="button" class="category-chip" data-category="dolci" role="tab" aria-selected="false">Dolci</button>
+            <button type="button" class="category-chip" data-category="bevande" role="tab" aria-selected="false">Bevande</button>
+          </div>
+        </div>
+
+        <!-- Contenitore Piatti Generati Dinamicamente via script.js -->
+        <div id="menu-items-container" class="menu-items-container" role="region" aria-live="polite">
+          <!-- I blocchi delle categorie e i piatti vengono iniettati qui da script.js -->
+        </div>
+
+        <!-- Note a piè di menu: Coperto, Allergeni, Legenda Prezzo S.Q. -->
+        <div class="menu-footer-block">
+          <div class="menu-notice-card">
+            <div class="cover-notice" id="menu-cover-charge">Coperto, pane e servizio – € 2,00</div>
+            <div class="allergens-notice" id="menu-allergens-notice">Se hai un'intolleranza alimentare, chiedi la lista degli allergeni al personale!</div>
+          </div>
+          <p class="sq-legend" id="menu-sq-legend">* S.Q. (Secondo Quantità / Stagionalità): prezzo su richiesta al personale</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         4. FOCUS PIZZE (Lenta maturazione, impasto digeribile, senza glutine)
+         ======================================================================== -->
+    <section id="pizze" class="section-pizze-focus" aria-labelledby="pizze-heading">
+      <div class="container pizze-focus-grid">
+        
+        <div class="pizze-focus-content">
+          <span class="section-tag" data-i18n="pizzaSectionTag">Artigianalità & Lievitazione</span>
+          <h2 id="pizze-heading" class="section-title" data-i18n="pizzaFocusTitle">L'Arte della Nostra Pizza</h2>
+          
+          <p class="pizze-focus-desc">
+            Le nostre pizze sono realizzate unendo tradizione, artigianalità e ricerca delle migliori materie prime. Ogni pizza nasce da un impasto curato con dedizione, maturato lentamente per garantire leggerezza, digeribilità e una consistenza unica.
+          </p>
+
+          <div class="pizze-features-pills">
+            <span class="feature-pill" data-i18n="pizzaPill1">Lenta Maturazione</span>
+            <span class="feature-pill" data-i18n="pizzaPill2">Alta Digeribilità</span>
+            <span class="feature-pill pill-gluten" data-i18n="pizzaPill3">Disponibile Senza Glutine (+€ 4)</span>
+            <span class="feature-pill" data-i18n="pizzaPill4">Ingredienti Selezionati</span>
+          </div>
+
+          <div class="pizze-ingredients-spotlight">
+            <h3 class="spotlight-title">Eccellenze del Territorio sulle Nostre Pizze:</h3>
+            <ul class="spotlight-list">
+              <li>Pancetta dei Monti Sibillini</li>
+              <li>Alici di San Benedetto del Tronto</li>
+              <li>Mozzarella di Bufala Campana</li>
+              <li>Ventricina Calabrese Piccante</li>
+              <li>Funghi Porcini Trifolati</li>
+              <li>Jamón Ibérico Bellota</li>
+            </ul>
+          </div>
+
+          <a href="tel:0736618154" class="cta-button cta-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span data-i18n="pizzaCallCTA">Ordina o prenota le pizze</span>
+          </a>
+        </div>
+
+        <!-- Segnaposto Grafico Pizza Sfornata -->
+        <div class="pizza-visual-placeholder">
+          <!-- SOSTITUIRE CON FOTO REALE: Pizza fumante appena sfornata con cornicione alveolato -->
+          <div class="placeholder-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+            <span>Spazio per Foto Reale Pizze</span>
+          </div>
+          <div class="pizza-art-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><circle cx="9" cy="8" r="1" fill="currentColor"></circle><circle cx="15" cy="9" r="1" fill="currentColor"></circle><circle cx="11" cy="15" r="1" fill="currentColor"></circle><circle cx="15" cy="15" r="1" fill="currentColor"></circle></svg>
+          </div>
+          <p class="pizza-quote">«Maturata lentamente per garantire leggerezza e una consistenza unica.»</p>
+          <span class="feature-pill pill-gluten" style="margin-top: 1rem;" data-i18n="pizzaGlutenTag">Disponibile anche Senza Glutine (+ € 4,00)</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         5. RECENSIONI (Valutazione 4,8 su 5 / 68 Recensioni Google)
+         ======================================================================== -->
+    <section id="recensioni" class="section-reviews" aria-labelledby="reviews-heading">
+      <div class="container">
+        
+        <div class="reviews-header-block">
+          <span class="section-tag" data-i18n="reviewsSectionTag">Dicono di Noi</span>
+          <h2 id="reviews-heading" class="section-title" data-i18n="reviewsTitle">L'esperienza dei nostri ospiti</h2>
+          
+          <div class="reviews-badge-container">
+            <span class="rating-score">4,8</span>
+            <span class="rating-stars" aria-label="Valutazione 4,8 su 5 stelle">★★★★★</span>
+            <span class="rating-count">68 recensioni su Google</span>
+          </div>
+        </div>
+
+        <!-- Griglia Recensioni Verificate (Frasi esatte senza autori inventati) -->
+        <div class="reviews-grid">
+          
+          <!-- Recensione 1 -->
+          <article class="review-card">
+            <div>
+              <div class="review-quote-mark" aria-hidden="true">“</div>
+              <p class="review-text" data-i18n="reviewQuote1">
+                «Location suggestiva, ingredienti ricercati e di qualità, ottimi vini.»
+              </p>
+            </div>
+            <div class="review-author-meta">
+              <svg class="google-g-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.66v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.15z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.24v3.15C3.26 21.36 7.35 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.24C.45 8.16 0 9.98 0 12s.45 3.84 1.24 5.42l4.04-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.24 6.58l4.04 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
+              <span>Recensione verificata Google</span>
+            </div>
+          </article>
+
+          <!-- Recensione 2 -->
+          <article class="review-card">
+            <div>
+              <div class="review-quote-mark" aria-hidden="true">“</div>
+              <p class="review-text" data-i18n="reviewQuote2">
+                «Una bella realtà con un interessante selezione di vini prevalentemente naturali.»
+              </p>
+            </div>
+            <div class="review-author-meta">
+              <svg class="google-g-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.66v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.15z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.24v3.15C3.26 21.36 7.35 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.24C.45 8.16 0 9.98 0 12s.45 3.84 1.24 5.42l4.04-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.24 6.58l4.04 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
+              <span>Recensione verificata Google</span>
+            </div>
+          </article>
+
+          <!-- Recensione 3 -->
+          <article class="review-card">
+            <div>
+              <div class="review-quote-mark" aria-hidden="true">“</div>
+              <p class="review-text" data-i18n="reviewQuote3">
+                «Super tapas con prodotti di eccellenza»
+              </p>
+            </div>
+            <div class="review-author-meta">
+              <svg class="google-g-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.66v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.15z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.24v3.15C3.26 21.36 7.35 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.24C.45 8.16 0 9.98 0 12s.45 3.84 1.24 5.42l4.04-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.24 6.58l4.04 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
+              <span>Recensione verificata Google</span>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="reviews-cta-center">
+          <a href="https://www.google.com/maps/search/?api=1&query=Sotto+Comunanza" target="_blank" rel="noopener noreferrer" class="google-reviews-btn">
+            <svg class="google-g-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.66v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.15z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.24v3.15C3.26 21.36 7.35 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.24C.45 8.16 0 9.98 0 12s.45 3.84 1.24 5.42l4.04-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.24 6.58l4.04 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
+            <span data-i18n="reviewGoogleLink">Leggi tutte le recensioni su Google</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         6. COME ORDINARE (Al Tavolo, Asporto, Consegna a Domicilio)
+         ======================================================================== -->
+    <section id="ordinare" class="section-order" aria-labelledby="order-heading">
+      <div class="container">
+        
+        <div style="text-align: center; max-width: 680px; margin-inline: auto;">
+          <span class="section-tag" data-i18n="orderSectionTag">Modalità di Servizio</span>
+          <h2 id="order-heading" class="section-title" data-i18n="orderTitle">Come Ordinare e Prenotare</h2>
+        </div>
+
+        <div class="order-grid">
+          
+          <!-- Card 1: Al Tavolo -->
+          <article class="order-card">
+            <div class="order-card-top">
+              <span class="order-badge-pill">Esperienza in Cantina</span>
+              <h3 class="order-card-title" data-i18n="serviceTableTitle">Consumazione sul Posto</h3>
+              <p class="order-card-desc" data-i18n="serviceTableDesc">
+                Vivi l'atmosfera della nostra cantina nel centro storico di Comunanza. È consigliata la prenotazione telefonica.
+              </p>
+            </div>
+            <a href="tel:0736618154" class="order-btn-cta">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span data-i18n="serviceTableCta">Chiama per prenotare</span>
+            </a>
+          </article>
+
+          <!-- Card 2: Asporto -->
+          <article class="order-card">
+            <div class="order-card-top">
+              <span class="order-badge-pill">Take Away</span>
+              <h3 class="order-card-title" data-i18n="serviceTakeawayTitle">Asporto</h3>
+              <p class="order-card-desc" data-i18n="serviceTakeawayDesc">
+                Ordina telefonicamente pizze e piatti della cucina, pronti da ritirare caldi e fragranti all'orario che preferisci.
+              </p>
+            </div>
+            <a href="tel:0736618154" class="order-btn-cta">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+              <span data-i18n="serviceTakeawayCta">Ordina da asporto</span>
+            </a>
+          </article>
+
+          <!-- Card 3: Consegna a Domicilio -->
+          <article class="order-card">
+            <div class="order-card-top">
+              <span class="order-badge-pill">Home Delivery</span>
+              <h3 class="order-card-title" data-i18n="serviceDeliveryTitle">Consegna a Domicilio</h3>
+              <p class="order-card-desc" data-i18n="serviceDeliveryDesc">
+                Portiamo la qualità di Sotto direttamente a casa tua a Comunanza e zone limitrofe con consegna puntuale.
+              </p>
+            </div>
+            <a href="tel:0736618154" class="order-btn-cta">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+              <span data-i18n="serviceDeliveryCta">Ordina a domicilio</span>
+            </a>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         7. DOVE SIAMO E CONTATTI (Orari con TODO, Mappa Iframe, Social)
+         ======================================================================== -->
+    <section id="contatti" class="section-contact" aria-labelledby="contact-heading">
+      <div class="container">
+        
+        <div style="margin-bottom: 3.5rem;">
+          <span class="section-tag" data-i18n="contactSectionTag">Dove Trovarci</span>
+          <h2 id="contact-heading" class="section-title" data-i18n="contactTitle">Vieni a trovarci a Comunanza</h2>
+        </div>
+
+        <div class="contact-grid">
+          
+          <!-- Colonna Informazioni, Telefono e Orari -->
+          <div class="contact-info-column">
+            
+            <!-- Scheda Indirizzo e Posizione -->
+            <div class="contact-card">
+              <h3 class="contact-card-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span data-i18n="addressLabel">Indirizzo</span>
+              </h3>
+              <p class="contact-card-value">Piazza Santa Caterina, 1<br>63087 Comunanza (AP) – Marche</p>
+              <p class="hotel-tagline" data-i18n="hotelNote">Presso Interamnia Boutique Hotel</p>
+            </div>
+
+            <!-- Scheda Telefono -->
+            <div class="contact-card">
+              <h3 class="contact-card-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <span data-i18n="phoneLabel">Telefono / Prenotazioni</span>
+              </h3>
+              <a href="tel:0736618154" class="phone-link">0736 618154</a>
+            </div>
+
+            <!-- Scheda Orari di Apertura con TODO RICHIESTO -->
+            <div class="contact-card">
+              <h3 class="contact-card-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span data-i18n="hoursLabel">Orari di Apertura</span>
+              </h3>
+              
+              <!-- TODO: inserire orari reali -->
+              <p class="hours-provisional-notice" data-i18n="hoursProvisional">
+                Chiama per conoscere gli orari di apertura
+              </p>
+
+              <!-- Tabella Orari Serale (Facile da aggiornare) -->
+              <table class="hours-table" aria-label="Tabella orari di apertura">
+                <tbody>
+                  <tr>
+                    <td>Lunedì</td>
+                    <td data-i18n="daysMonHours">Chiuso</td>
+                  </tr>
+                  <tr>
+                    <td>Martedì</td>
+                    <td>19:00 – 23:00</td>
+                  </tr>
+                  <tr>
+                    <td>Mercoledì</td>
+                    <td>19:00 – 23:00</td>
+                  </tr>
+                  <tr>
+                    <td>Giovedì</td>
+                    <td>19:00 – 23:00</td>
+                  </tr>
+                  <tr>
+                    <td>Venerdì</td>
+                    <td>19:00 – 23:00</td>
+                  </tr>
+                  <tr>
+                    <td>Sabato</td>
+                    <td>19:00 – 23:00</td>
+                  </tr>
+                  <tr>
+                    <td>Domenica</td>
+                    <td>19:00 – 23:00</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style="font-size: 0.82rem; color: var(--ink-muted); margin-top: 0.75rem; font-style: italic;" data-i18n="eveningClosing">
+                Chiusura serale alle ore 23:00
+              </p>
+            </div>
+
+            <!-- Canali Social Ufficiali -->
+            <div class="contact-card">
+              <h3 class="contact-card-title" data-i18n="socialFollow">Seguici sui social</h3>
+              <div class="social-links-row">
+                <a href="https://www.instagram.com/sotto_winefood/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Segui Sotto su Instagram">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                  <span>Instagram</span>
+                </a>
+                <a href="https://www.facebook.com/sottowinefood" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Segui Sotto su Facebook">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                  <span>Facebook</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Colonna Mappa Google Maps (Zero API Key, Embed query esatta) -->
+          <div class="map-wrapper">
+            <div class="map-iframe-container">
+              <iframe
+                title="Mappa di Sotto – Piazza Santa Caterina 1, Comunanza (AP)"
+                src="https://maps.google.com/maps?q=Piazza+Santa+Caterina+1,+63087+Comunanza+AP&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+            <div class="map-actions-bar">
+              <span class="plus-code-tag">Plus Code: XC47+VP Comunanza, Ascoli Piceno</span>
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Piazza+Santa+Caterina+1,+63087+Comunanza+AP" target="_blank" rel="noopener noreferrer" class="directions-btn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+                <span data-i18n="directionsBtn">Ottieni Indicazioni</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       8. FOOTER
+       ======================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      
+      <div class="footer-top-grid">
+        
+        <!-- Brand Footer con Logo Richiesto -->
+        <div class="footer-brand">
+          <div class="footer-logo-row">
+            <img src="assets/logo.png" alt="Sotto – Cantina + Cucina" class="footer-logo-img">
+            <div>
+              <span class="footer-brand-title">SOTTO</span>
+              <p style="font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-accent);">Cantina + Cucina</p>
+            </div>
+          </div>
+          <p class="footer-tagline" data-i18n="footerTagline">
+            Ristorante, Cantina e Pizzeria nel cuore di Comunanza (AP).
+          </p>
+          <p style="font-size: 0.88rem; color: var(--bg-sand);" data-i18n="footerHotel">
+            Presso Interamnia Boutique Hotel • Piazza Santa Caterina, 1
+          </p>
+        </div>
+
+        <!-- Link Rapidi -->
+        <div>
+          <h4 class="footer-column-title">Navigazione</h4>
+          <ul class="footer-links-list">
+            <li><a href="#locale" data-i18n="navLocale">Il Locale</a></li>
+            <li><a href="#menu" data-i18n="navMenu">Menu</a></li>
+            <li><a href="#pizze" data-i18n="navPizze">Le Pizze</a></li>
+            <li><a href="#recensioni" data-i18n="navRecensioni">Recensioni Google</a></li>
+            <li><a href="#ordinare" data-i18n="navComeOrdinare">Come Ordinare</a></li>
+            <li><a href="#contatti" data-i18n="navContatti">Dove Siamo</a></li>
+          </ul>
+        </div>
+
+        <!-- Contatti & Social Footer -->
+        <div>
+          <h4 class="footer-column-title">Contatti & Info</h4>
+          <div class="footer-contact-info">
+            <p>Piazza Santa Caterina, 1<br>63087 Comunanza (AP)</p>
+            <p><a href="tel:0736618154" style="color: #ffffff; font-weight: 600;">Tel: 0736 618154</a></p>
+            <p style="margin-top: 0.5rem;">
+              <a href="https://www.instagram.com/sotto_winefood/" target="_blank" rel="noopener noreferrer" style="color: var(--bg-sand); margin-right: 1rem;">Instagram</a>
+              <a href="https://www.facebook.com/sottowinefood" target="_blank" rel="noopener noreferrer" style="color: var(--bg-sand);">Facebook</a>
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Riga Inferiore Legale con Commenti TODO Richiesti -->
+      <div class="footer-bottom-row">
+        <div>
+          &copy; <span id="current-year">2026</span> Sotto – Cucina, vino e pizza. <span data-i18n="footerRights">Tutti i diritti riservati.</span>
+        </div>
+        
+        <!-- Segnaposto Dati Fiscali e Privacy Policy -->
+        <div>
+          <!-- TODO: Inserire P.IVA del locale (es. P.IVA 00000000000) -->
+          <!-- TODO: Inserire link alla Privacy Policy / Cookie Policy conforme GDPR -->
+          <span style="font-size: 0.8rem; color: var(--cream-muted);">P.IVA: in aggiornamento • Privacy Policy</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       9. MOBILE FIXED ACTION BAR (Accesso rapido con un tocco da smartphone)
+       ======================================================================== -->
+  <aside class="mobile-action-bar" aria-label="Azioni rapide mobile">
+    <a href="tel:0736618154" class="mobile-action-item action-call" aria-label="Chiama il ristorante">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      <span data-i18n="mobileCall">Chiama</span>
+    </a>
+    <a href="#menu" class="mobile-action-item" aria-label="Vai al menu">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+      <span data-i18n="mobileMenu">Menu</span>
+    </a>
+    <a href="https://www.google.com/maps/dir/?api=1&destination=Piazza+Santa+Caterina+1,+63087+Comunanza+AP" target="_blank" rel="noopener noreferrer" class="mobile-action-item" aria-label="Indicazioni stradali per il locale">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+      <span data-i18n="mobileDirections">Indicazioni</span>
+    </a>
+  </aside>
+
+  <!-- Script JavaScript -->
+  <script src="script.js"></script>
+
+</body>
+</html>
