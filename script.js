@@ -1,14 +1,12 @@
 /**
  * SOTTO – Cantina + Cucina
  * Script principale: Gestione Menu dinamico, Internazionalizzazione (IT/EN), 
- * Interazioni UI, Scrollspy, Mobile Menu e Accessibilità.
+ * Interazioni UI, Scrollspy, Mobile Menu e Accessibilità Mobile-First.
  */
 
 // ==========================================
 // 1. DATI DEL MENU (UNICO PUNTO DI MODIFICA)
 // ==========================================
-// Modifica qui i piatti, i prezzi e le descrizioni.
-// Le modifiche si riflettono automaticamente in entrambe le lingue.
 const MENU_DATA = {
   categories: [
     {
@@ -494,7 +492,8 @@ const MENU_DATA = {
       customPrice: {
         it: '1/2 lt € 5,00 – Bottiglia € 8,00',
         en: '1/2 lt € 5.00 – Bottle € 8.00'
-      }
+      },
+      isMultiPrice: true
     },
     {
       category: 'bevande',
@@ -534,8 +533,9 @@ const MENU_DATA = {
       price: 'Da € 3,00',
       customPrice: {
         it: 'piccola € 3,00 – media € 5,00 – 1 lt € 10,00',
-        en: 'small € 3.00 – medium € 5.00 – 1 lt € 10.00'
-      }
+        en: 'small € 3.00 – media € 5.00 – 1 lt € 10.00'
+      },
+      isMultiPrice: true
     },
     {
       category: 'bevande',
@@ -794,7 +794,7 @@ let currentLang = 'it';
 let activeCategoryFilter = 'all';
 
 // ==========================================
-// 4. FUNZIONE RENDERING DEL MENU DINAMICO
+// 4. RENDERING DEL MENU (TUTTI I PIATTI VISIBILI)
 // ==========================================
 function renderMenu() {
   const container = document.getElementById('menu-items-container');
@@ -802,22 +802,19 @@ function renderMenu() {
 
   container.innerHTML = '';
 
-  // Determina quali categorie mostrare in base al filtro attivo
-  const categoriesToShow = activeCategoryFilter === 'all'
-    ? MENU_DATA.categories
-    : MENU_DATA.categories.filter(cat => cat.id === activeCategoryFilter);
-
-  categoriesToShow.forEach(category => {
-    // Trova i piatti della categoria
+  // Renderizza TUTTE le categorie in sequenza:
+  // L'utente da telefono può così scorrere l'intero menu liberamente
+  MENU_DATA.categories.forEach(category => {
     const categoryDishes = MENU_DATA.items.filter(item => item.category === category.id);
     if (categoryDishes.length === 0) return;
 
-    // Crea il contenitore della categoria
-    const catSection = document.createElement('div');
+    const catSection = document.createElement('section');
     catSection.className = 'menu-category-block';
+    catSection.id = `category-${category.id}`;
     catSection.setAttribute('data-category-id', category.id);
+    catSection.setAttribute('aria-label', category.name[currentLang]);
 
-    // Titolo categoria con stile classico
+    // Intestazione categoria
     const headerWrapper = document.createElement('div');
     headerWrapper.className = 'category-header';
 
@@ -826,7 +823,6 @@ function renderMenu() {
     catTitle.textContent = category.name[currentLang];
     headerWrapper.appendChild(catTitle);
 
-    // Se la categoria ha un testo introduttivo (es. Pizze)
     if (category.intro && category.intro[currentLang]) {
       const catIntro = document.createElement('p');
       catIntro.className = 'category-intro-text';
@@ -836,13 +832,17 @@ function renderMenu() {
 
     catSection.appendChild(headerWrapper);
 
-    // Griglia/Lista piatti con leader a puntini
+    // Lista dei piatti
     const dishList = document.createElement('div');
     dishList.className = 'dish-list';
 
     categoryDishes.forEach(dish => {
       const dishCard = document.createElement('article');
       dishCard.className = 'dish-item';
+
+      if (dish.isMultiPrice) {
+        dishCard.classList.add('is-multi-price');
+      }
 
       if (dish.comment) {
         dishCard.appendChild(document.createComment(dish.comment));
@@ -867,12 +867,10 @@ function renderMenu() {
         nameWrapper.appendChild(badgeEl);
       }
 
-      // Linea di punti per collegare nome e prezzo stile carta ristorante
       const dotsEl = document.createElement('span');
       dotsEl.className = 'dish-dots';
       dotsEl.setAttribute('aria-hidden', 'true');
 
-      // Prezzo
       const priceEl = document.createElement('span');
       priceEl.className = 'dish-price';
       
@@ -892,7 +890,6 @@ function renderMenu() {
       dishMainRow.appendChild(priceEl);
       dishCard.appendChild(dishMainRow);
 
-      // Descrizione (corsivo sottile sotto il nome)
       if (dish.description && dish.description[currentLang]) {
         const descEl = document.createElement('p');
         descEl.className = 'dish-description';
@@ -905,7 +902,6 @@ function renderMenu() {
 
     catSection.appendChild(dishList);
 
-    // Se la categoria ha una nota a piè di sezione (es. Carni, Pizze)
     if (category.note && category.note[currentLang]) {
       const noteEl = document.createElement('div');
       noteEl.className = 'category-footnote';
@@ -916,7 +912,7 @@ function renderMenu() {
     container.appendChild(catSection);
   });
 
-  // Aggiorna testi fissi di fondo menu (Coperto, Allergeni, Legenda S.Q.)
+  // Aggiorna testi fissi di fondo menu
   const coverEl = document.getElementById('menu-cover-charge');
   if (coverEl) coverEl.textContent = MENU_DATA.footerInfo.cover[currentLang];
 
@@ -925,15 +921,23 @@ function renderMenu() {
 
   const sqLegendEl = document.getElementById('menu-sq-legend');
   if (sqLegendEl) sqLegendEl.textContent = MENU_DATA.footerInfo.sqLegend[currentLang];
+
+  // Configura lo scrollspy per le categorie
+  setupCategoryScrollspy();
 }
 
 // ==========================================
-// 5. GESTIONE FILTRI CATEGORIA MENU
+// 5. GESTIONE CHIP CATEGORIE CON SCROLL FLUIDO
 // ==========================================
 function setupCategoryFilters() {
   const filterButtons = document.querySelectorAll('.category-chip');
+  const chipsContainer = document.querySelector('.category-chips-list');
+
   filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetCategory = btn.getAttribute('data-category');
+
       filterButtons.forEach(b => {
         b.classList.remove('active');
         b.setAttribute('aria-selected', 'false');
@@ -941,18 +945,85 @@ function setupCategoryFilters() {
 
       btn.classList.add('active');
       btn.setAttribute('aria-selected', 'true');
-      activeCategoryFilter = btn.getAttribute('data-category');
-      renderMenu();
 
-      // Scroll fluido verso l'inizio dei piatti se l'utente è sceso
-      const menuSection = document.getElementById('menu');
-      if (menuSection) {
-        const offset = 140; // compensazione per navbar e chip bar
-        const topPos = menuSection.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top: topPos, behavior: 'smooth' });
+      // Centra il chip cliccato nella barra orizzontale su mobile
+      if (chipsContainer) {
+        const chipLeft = btn.offsetLeft;
+        const chipWidth = btn.offsetWidth;
+        const containerWidth = chipsContainer.offsetWidth;
+        chipsContainer.scrollTo({
+          left: chipLeft - (containerWidth / 2) + (chipWidth / 2),
+          behavior: 'smooth'
+        });
+      }
+
+      if (targetCategory === 'all') {
+        const menuTop = document.getElementById('menu');
+        if (menuTop) {
+          const headerHeight = document.querySelector('.site-header')?.offsetHeight || 70;
+          const topPos = menuTop.getBoundingClientRect().top + window.scrollY - headerHeight;
+          window.scrollTo({ top: topPos, behavior: 'smooth' });
+        }
+      } else {
+        const targetBlock = document.getElementById(`category-${targetCategory}`);
+        if (targetBlock) {
+          const headerHeight = document.querySelector('.site-header')?.offsetHeight || 70;
+          const chipsHeight = document.querySelector('.menu-categories-wrapper')?.offsetHeight || 50;
+          const topPos = targetBlock.getBoundingClientRect().top + window.scrollY - (headerHeight + chipsHeight + 10);
+          window.scrollTo({ top: topPos, behavior: 'smooth' });
+        }
       }
     });
   });
+}
+
+// Scrollspy automatico che evidenzia il chip corretto mentre l'utente scorre
+let categoryObserver = null;
+function setupCategoryScrollspy() {
+  if (categoryObserver) {
+    categoryObserver.disconnect();
+  }
+
+  const categoryBlocks = document.querySelectorAll('.menu-category-block');
+  const chips = document.querySelectorAll('.category-chip');
+  const chipsContainer = document.querySelector('.category-chips-list');
+
+  if (categoryBlocks.length === 0 || chips.length === 0) return;
+
+  categoryObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const catId = entry.target.getAttribute('data-category-id');
+        chips.forEach(chip => {
+          if (chip.getAttribute('data-category') === catId) {
+            chips.forEach(c => {
+              c.classList.remove('active');
+              c.setAttribute('aria-selected', 'false');
+            });
+            chip.classList.add('active');
+            chip.setAttribute('aria-selected', 'true');
+
+            // Fai scorrere dolcemente la chip bar per tenere visibile il chip attivo
+            if (chipsContainer && window.innerWidth <= 820) {
+              const chipLeft = chip.offsetLeft;
+              const chipWidth = chip.offsetWidth;
+              const containerWidth = chipsContainer.offsetWidth;
+              chipsContainer.scrollTo({
+                left: chipLeft - (containerWidth / 2) + (chipWidth / 2),
+                behavior: 'smooth'
+              });
+            }
+          }
+        });
+      }
+    });
+  }, {
+    root: null,
+    rootMargin: '-120px 0px -60% 0px',
+    threshold: 0
+  });
+
+  categoryBlocks.forEach(block => categoryObserver.observe(block));
 }
 
 // ==========================================
@@ -964,7 +1035,6 @@ function setLanguage(lang) {
   localStorage.setItem('sotto_language', lang);
   document.documentElement.lang = lang;
 
-  // Aggiorna classi bottoni lingua
   const itBtns = document.querySelectorAll('.lang-btn-it');
   const enBtns = document.querySelectorAll('.lang-btn-en');
   if (lang === 'it') {
@@ -975,7 +1045,6 @@ function setLanguage(lang) {
     enBtns.forEach(b => b.classList.add('active'));
   }
 
-  // Aggiorna tutti i nodi con data-i18n
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (UI_TRANSLATIONS[lang] && UI_TRANSLATIONS[lang][key]) {
@@ -983,7 +1052,6 @@ function setLanguage(lang) {
     }
   });
 
-  // Aggiorna attributi speciali (placeholder, aria-label, title)
   document.querySelectorAll('[data-i18n-aria]').forEach(el => {
     const key = el.getAttribute('data-i18n-aria');
     if (UI_TRANSLATIONS[lang] && UI_TRANSLATIONS[lang][key]) {
@@ -991,7 +1059,6 @@ function setLanguage(lang) {
     }
   });
 
-  // Ri-renderizza il menu con la nuova lingua
   renderMenu();
 }
 
@@ -1006,7 +1073,6 @@ function setupLanguageSwitchers() {
     });
   });
 
-  // Recupera preferenza salvata o usa 'it' come default
   const savedLang = localStorage.getItem('sotto_language') || 'it';
   setLanguage(savedLang);
 }
@@ -1019,7 +1085,7 @@ function setupStickyHeader() {
   if (!header) return;
 
   const onScroll = () => {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 40) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
@@ -1037,7 +1103,7 @@ function setupMobileMenu() {
   const toggleBtn = document.querySelector('.mobile-menu-toggle');
   const navMenu = document.querySelector('.site-nav');
   const overlay = document.querySelector('.mobile-overlay');
-  const navLinks = document.querySelectorAll('.site-nav .nav-link, .site-nav .cta-button');
+  const navLinks = document.querySelectorAll('.site-nav .nav-link, .site-nav .header-cta-btn');
 
   if (!toggleBtn || !navMenu) return;
 
@@ -1070,12 +1136,10 @@ function setupMobileMenu() {
     overlay.addEventListener('click', closeMenu);
   }
 
-  // Chiudi quando si clicca su un link
   navLinks.forEach(link => {
     link.addEventListener('click', closeMenu);
   });
 
-  // Chiudi con ESC
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && navMenu.classList.contains('is-open')) {
       closeMenu();
@@ -1085,7 +1149,7 @@ function setupMobileMenu() {
 }
 
 // ==========================================
-// 9. SCROLLSPY ATTIVO PER I LINK DI NAVIGAZIONE
+// 9. SCROLLSPY PER NAVIGAZIONE PRINCIPALE
 // ==========================================
 function setupScrollspy() {
   const sections = document.querySelectorAll('section[id]');
@@ -1121,7 +1185,6 @@ function setupScrollspy() {
 // 10. REVEAL ANIMATIONS ON SCROLL
 // ==========================================
 function setupScrollAnimations() {
-  // Rispetta la preferenza di movimento ridotto dell'utente
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (prefersReducedMotion) return;
 
