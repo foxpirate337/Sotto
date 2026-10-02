@@ -65,5 +65,5 @@ Per modificare prezzi, aggiungere nuovi piatti o aggiornare le descrizioni, apri
 
 - **Indirizzo**: Piazza Santa Caterina, 1, 63087 Comunanza (AP) – Presso Interamnia Boutique Hotel
 - **Telefono**: 0736 618154
-- **Instagram**: [@sotto_winefood](https://www.instagram.com/sotto_winefood/)
+- **Instagram**: [@sottoristorantepizzeria](https://www.instagram.com/sottoristorantepizzeria/)
 - **Facebook**: [sottowinefood](https://www.facebook.com/sottowinefood)
